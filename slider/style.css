@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(46, 103, 156);
+    overflow-x: hidden;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(223, 68, 89, 0.384);
+    border-radius: 50%;
+    animation: anime 2s alternate infinite;
+}
+
+#b1 {
+    width: 60px;
+    height: 60px;
+    top: 80px;
+    left: 130px;
+}
+
+#b2 {
+    width: 120px;
+    height: 120px;
+    bottom: 150px;
+    right: 60px;
+}
+
+#b3 {
+    width: 170px;
+    height: 170px;
+    left: 150px;
+    top: 90px;
+}
+
+#b4 {
+    width: 200px;
+    height: 200px;
+    right: 110px;
+    top: 90px;
+}
+
+#b5 {
+    width: 290px;
+    height: 290px;
+    left: 40px;
+    bottom: 90px;
+}
+
+#b6 {
+    width: 40px;
+    height: 40px;
+    top: 50px;
+    left: 444px;
+}
+
+#b7 {
+    width: 90px;
+    height: 90px;
+    bottom: 50px;
+    right: 600px;
+}
+
+#b8 {
+    width: 64px;
+    height: 64px;
+    left: 99px;
+    top: 506px;
+
+}
+
+@keyframes anime {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(20px);
+        background: rgba(207, 133, 49, 0.384);
+    }
+}
+
+.container {
+    position: absolute;
+    width: 50%;
+    /* margin: auto; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    border: 30px solid rgb(51, 50, 50);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+}
+
+.slider img {
+    width: 100%;
+    /* height: 60%; */
+    /* background-size: cover; */
+    transition: 0.6s ease;
+}
+
+.fa-chevron-right {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.fa-chevron-left {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.btnLayer,
+.btnLayer2 {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    width: 10%;
+    height: 100%;
+}
+
+.btnLayer2 {
+    right: 0;
+}
+
+img:hover {
+    transform: scale(1.15);
+}
+
+.menuholder {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu {
+    position: relative;
+    margin: 20px;
+    /* width: 80px; */
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* background: white; */
+    overflow: hidden;
+    z-index: 6;
+}
+
+.hamburger {
+    width: 40px;
+    height: 4px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 4px black;
+    transition: all 0.2s ease-in-out;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 4px black;
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger::after {
+    right: 0;
+}
+
+.menu:hover .hamburger::before,
+.menu:hover .hamburger::after {
+    width: 40px;
+    /* pointer-events: none; */
+}
+
+.hamburger::before {
+    transform: translateY(-10px);
+}
+
+.hamburger::after {
+    transform: translateY(10px);
+}
+
+.menu.open .hamburger {
+    background: none;
+    box-shadow: none;
+}
+
+.menu.open .hamburger::before {
+    transform: rotate(135deg);
+    width: 40px;
+}
+
+.menu.open .hamburger::after {
+    transform: rotate(-135deg);
+    width: 40px;
+
+}
+
+
+
+.list {
+    position: absolute;
+    right: 0;
+    background: rgba(40, 56, 70, 0.918);
+    width: 20%;
+    height: 100vh;
+    color: white;
+    z-index: 1;
+    transform: translateX(400px);
+    transition: transform 0.2s ease-in;
+}
+
+.list ul {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.list-open {
+    transform: translateX(0);
+    /* right: 0; */
+}
+
+.unclick {
+    font-size: large;
+}
+
+.unclick_li {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.unclick_li:hover {
+    cursor: pointer;
+    background: rgba(97, 127, 151, 0.918);
+}
+
+.nav {
+    position: absolute;
+    width: 95%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 40px;
+}
+
+.nav ul {}
+
+.nav h1 {
+    font-size: 32px;
+    color: #fff;
+    font-family: 'Bubblegum Sans', cursive;
+    text-shadow: 4px 4px 6px #000;
+    cursor: pointer;
+}
+
+.nav h1:hover {
+    animation: bubble 0.9s ease-in-out alternate infinite;
+}
+
+@keyframes bubble {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(3px);
+    }
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 3px 3px 4px #000;
+    cursor: pointer;
+}
+
+.nav ul li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.btn {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 100px;
+}
+
+button {
+    border: none;
+    border-radius: 2px;
+    padding: 5px 20px 5px 20px;
+    color: #fff;
+}
+
+button:not(:last-child) {
+    margin-right: 50px;
+}
+
+button:first-child {
+    background-color: hsl(36, 86%, 52%);
+    transition: 0.5s ease-in-out;
+}
+
+button:first-child:hover {
+    background-color: hsl(36, 86%, 39%);
+}
